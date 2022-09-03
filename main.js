@@ -92,3 +92,4 @@ async function fetchData(username) {
 function updateRepos(user){
   console.log(user.repos_url) 
 }
+console.log("Change to check something");
