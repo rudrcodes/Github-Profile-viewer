@@ -89,7 +89,8 @@ async function fetchData(username) {
     console.log(err);
   }
 }
-function updateRepos(user){
-  console.log(user.repos_url) 
+function updateRepos(user) {
+  console.log(user.repos_url);
 }
 console.log("Change to check something");
+console.log("Always PULL before you PUSH to keep your repo uptodate. ");
