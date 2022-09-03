@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+    background: rgb(17, 0, 36);
+    background: linear-gradient(90deg, rgba(17, 0, 36, 0.9475140397956058) 11%, rgba(96, 6, 170, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    color: #fff;
+}
+
+/* pracitce */
+/* .cont{
+height: 10vh;
+text-align: center;
+}
+.data{
+    height: 20vh;
+}
+img{
+    border-radius: 50%;
+    height: 200px;
+} */
+/* Main code */
+.cont {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 5px solid rgba(255, 255, 255, 0.275);
+    text-align: center;
+    height: 30vh;
+    width: 50vw;
+    border-radius: 20px;
+}
+
+.img img {
+    height: 100px;
+    border-radius: 50%;
+    width: 100px;
+}
+
+.inp {
+    /* background-color: yellow; */
+    height: 7vh;
+    width: 30vw;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.3rem;
+}
