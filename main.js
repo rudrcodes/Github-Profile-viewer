@@ -61,6 +61,7 @@ const repos = document.querySelector(".repos");
 const API = "https://api.github.com/users/";
 const realName = document.querySelector(".name");
 const socials = document.querySelector(".socials");
+const headRepoHtml = document.querySelector(".headRepoHtml");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   fetchData(inp.value);
@@ -77,11 +78,16 @@ async function fetchData(username) {
       // data.innerText = user;
       bio.innerText = user.login;
       realName.innerText = user.name;
+      realName.href = `https://github.com/${username}`;
+      socials.href = user.blog;
       socials.innerText = user.blog;
-      updateRepos(user);
       document.querySelector(".bio").innerText = user.bio;
       avatar.src = user.avatar_url;
       console.log(user);
+
+      headRepoHtml.innerHTML = `<h2>Repos :-</h2>`;
+
+      updateRepos(username);
     }
   } catch (err) {
     // window.location.reload();
@@ -89,8 +95,16 @@ async function fetchData(username) {
     console.log(err);
   }
 }
-function updateRepos(user) {
-  console.log(user.repos_url);
+async function updateRepos(username) {
+  let repoResponse = await fetch(`${API}${username}/repos`);
+  let repoData = await repoResponse.json();
+  // let headRepoHtml=`<h2>Repos :-</h2>`
+  //   repos.insertAdjacentHTML('beforebegin',headRepoHtml)
+  repoData.forEach((element) => {
+    let html = `<li>${element.name}</li>`;
+    repos.innerHTML += html;
+  });
+  console.log(repoData);
 }
 console.log("Change to check something");
 console.log("Always PULL before you PUSH to keep your repo uptodate. ");
